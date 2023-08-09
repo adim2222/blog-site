@@ -20,31 +20,23 @@ const router = useRouter();
     <div class="body">
         {{ store.state.data[id - 1].body }}
     </div>
-    <div class="back-button" @click="router.back">
-        Back
+    <div class="back-button">
+        <v-btn width="200px" @click="router.back">
+            Back
+        </v-btn>
     </div>
 </template>
 
 <style scoped>
-
 .back-button {
-    margin: 20px;
-    width: 200px;
-    height: 50px;
-    background-color: red;
-    text-align: center;
-    font-size: 45px;
-    transition: 0.3s;
-    border-radius: 10px;
-    border: solid black 1px;
+    margin-left: 20px;
 }
-.back-button:hover {
-    transform: translate(10px, 0px);
-}
+
 header {
     margin: 20px;
     font-size: 40px;
 }
+
 .body {
     margin: 20px;
     font-size: 20px;
