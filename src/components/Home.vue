@@ -9,10 +9,9 @@ const router = useRouter();
 <template>
     <v-app>
         <v-main class="card-container">
-            <div class="card" v-for="post in store.state.data" @click="router.push(`/content/${post.id}`)">
-                <div class="fill"></div>
-                <div class="card-title">{{ post.title }}</div>
-            </div>
+            <v-card class="card" v-for="post in store.state.data" @click="router.push(`/content/${post.id}`)">
+                <v-card-text style="word-break: break-word; font-size: x-large; line-height: 25px;">{{ post.title }}</v-card-text>
+            </v-card>
         </v-main>
     </v-app>
 </template>
@@ -35,21 +34,13 @@ const router = useRouter();
     flex-wrap: wrap;
     padding: 10px;
     justify-content: space-around;
+    background-color: black;
 }
 
 .card {
     margin: 14px;
     height: 400px;
     width: 400px;
-    border: solid black 1px;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 11px 11px 24px -10px rgba(66, 68, 90, 1);
-    transition: 0.3s;
-}
-
-.card:hover {
-    transform: scale(1.1);
 }
 
 .card-title {
