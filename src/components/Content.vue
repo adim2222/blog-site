@@ -26,9 +26,7 @@ const router = useRouter();
 </template>
 
 <style scoped>
-* {
-    font-family: Arial, Helvetica, sans-serif;
-}
+
 .back-button {
     margin: 20px;
     width: 200px;

@@ -3,11 +3,19 @@ import { RouterView } from 'vue-router';
 </script>
 
 <template>
-    <main>
-        <RouterView />
-    </main>
+    <v-app>
+        <v-app-bar class="navbar">
+            <RouterLink to="/">Home</RouterLink>
+            <RouterLink to="/about">About</RouterLink>
+        </v-app-bar>
+        <v-main>
+            <RouterView />
+        </v-main>
+    </v-app>
 </template>
 
-<style scoped>
-
+<style>
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
 </style>
