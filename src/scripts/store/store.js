@@ -3,17 +3,24 @@ import { createStore } from "vuex";
 const store = createStore({
     state () {
         return {
-            data: "",
+            posts: "",
+            comments: "",
         }
     },
     mutations: {
-        setData (state, value) {
-            state.data = value;
+        setPosts (state, value) {
+            state.posts = value;
+        },
+        setComments (state, value) {
+            state.comments = value;
         }
     },
     actions: {
-        getData (state, value) {
-            state.commit('setData', value)
+        getPosts (state, value) {
+            state.commit('setPosts', value)
+        },
+        getComments (state,value) {
+            state.commit('setComments', value)
         }
     },
 })

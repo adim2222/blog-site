@@ -10,7 +10,7 @@ const router = useRouter();
 <template>
     <v-app>
         <v-main class="card-container">
-            <v-card class="card d-flex flex-column" v-for="post in store.state.data"
+            <v-card class="card d-flex flex-column" v-for="post in store.state.posts"
                 @click="router.push(`/content/${post.id}`)">
                 <img :src="`https://picsum.photos/300/130?random=${post.id}`">
                 <v-card-title style="white-space: normal;">{{ post.title }}</v-card-title>
