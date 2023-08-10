@@ -53,6 +53,12 @@ const router = useRouter();
     margin: 14px;
     height: 400px;
     width: 400px;
+    animation-name: card-load;
+    animation-duration: 3s;
+}
+@keyframes card-load {
+    0% {opacity: 0; transform: translate(0px,30px);}
+    100% {opacity: 1; transform: translate(0px,0px);}
 }
 
 .card-title {
