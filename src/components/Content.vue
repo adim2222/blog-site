@@ -27,7 +27,7 @@ const router = useRouter();
         </v-btn>
     </div>
     <div class="comment-section ml-3 mt-3">
-        <span class="comment-section-label">Comments:</span>
+        <span class="comment-section-label ml-3">Comments:</span>
         <div class="comment mb-4 pa-2" v-for="comment in store.state.comments.data.comments">
             <v-avatar color="surface-variant">{{ comment.user.id }}</v-avatar>
             <span class="ml-2 username">{{ comment.user.username }}:</span>
