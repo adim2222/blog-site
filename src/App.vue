@@ -17,8 +17,8 @@ let showNav = ref(false);
         </v-app-bar>
         <v-navigation-drawer v-model="showNav" app>
             <v-list>
-                <v-list-item><v-btn @click="router.push('/')">Home</v-btn></v-list-item>
-                <v-list-item><v-btn @click="router.push('/about')">About</v-btn></v-list-item>
+                <v-list-item><v-btn variant="outlined" @click="router.push('/')">Home</v-btn></v-list-item>
+                <v-list-item><v-btn variant="outlined" @click="router.push('/about')">About</v-btn></v-list-item>
                 <v-list-item>item 3</v-list-item>
                 <v-list-item>item 4</v-list-item>
                 <v-list-item>item 5</v-list-item>
@@ -42,18 +42,6 @@ let showNav = ref(false);
     padding: 5px;
     font-size: 30px;
     
-}
-.bounce:hover {
-    animation-name: bounce;
-    animation-duration: 0,5s;
-}
-@keyframes bounce {
-    0%,100% {
-        transform: translate(0px,0px);
-    }
-    50% {
-        transform: translate(0px, -10px);
-    }
 }
 .nav-bar {
     display: flex;
