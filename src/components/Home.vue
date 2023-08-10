@@ -12,9 +12,8 @@ const router = useRouter();
         <v-main class="card-container">
             <v-card class="card d-flex flex-column" v-for="post in store.state.data"
                 @click="router.push(`/content/${post.id}`)">
-                <v-card-text style="word-break: break-word; font-size: x-large; line-height: 25px;">{{ post.title
-                }}</v-card-text>
-                <img :src="`https://picsum.photos/300/100?random=${post.id}`">
+                <img :src="`https://picsum.photos/300/130?random=${post.id}`">
+                <v-card-title style="white-space: normal;">{{ post.title }}</v-card-title>
                 <v-card-text class="post-body">{{ post.body }}</v-card-text>
                 <v-chip-group class="ml-2">
                     <v-chip variant="outlined" v-for="tag in post.tags">{{ tag }}</v-chip>
@@ -26,7 +25,7 @@ const router = useRouter();
 
 <style scoped>
 .post-body {
-    max-height: 100px;
+    height: 100px;
     overflow: hidden;
 }
 
@@ -65,4 +64,5 @@ const router = useRouter();
     background-color: red;
     width: 100%;
     height: 70%;
-}</style>
+}
+</style>

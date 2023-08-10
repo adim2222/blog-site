@@ -14,6 +14,7 @@ const router = useRouter();
 </script>
 
 <template>
+    <img :src="`https://picsum.photos/1000/300?random=${id}`">
     <header>
         {{ store.state.data[id - 1].title }}
     </header>
@@ -28,6 +29,9 @@ const router = useRouter();
 </template>
 
 <style scoped>
+img {
+    width: 100%;
+}
 .back-button {
     margin-left: 20px;
 }
