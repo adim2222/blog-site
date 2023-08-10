@@ -1,7 +1,7 @@
 <script setup>
 import { RouterView } from 'vue-router';
-import {ref} from "vue";
-import {useRouter} from 'vue-router'
+import { ref } from "vue";
+import { useRouter } from 'vue-router'
 
 const router = useRouter();
 
@@ -34,6 +34,7 @@ let showNav = ref(false);
 * {
     font-family: Arial, Helvetica, sans-serif;
 }
+
 .nav-button {
     text-decoration: none;
     color: black;
@@ -41,8 +42,9 @@ let showNav = ref(false);
     border-radius: 10px;
     padding: 5px;
     font-size: 30px;
-    
+
 }
+
 .nav-bar {
     display: flex;
     width: 100%;
