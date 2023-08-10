@@ -12,14 +12,21 @@ const router = useRouter();
         <v-main class="card-container">
             <v-card class="card d-flex flex-column" v-for="post in store.state.data" @click="router.push(`/content/${post.id}`)">
                 <v-card-text style="word-break: break-word; font-size: x-large; line-height: 25px;">{{ post.title }}</v-card-text>
-                <v-card-text>{{ post.body }}</v-card-text>
-                <v-card-actions><span v-for="tag in post.tags">{{ tag }}&nbsp;</span></v-card-actions>
+                <img src="https://picsum.photos/400/150">
+                <v-card-text class="post-body">{{ post.body }}</v-card-text>
+                <v-chip-group class="ml-2">
+                    <v-chip variant="outlined" v-for="tag in post.tags">{{ tag }}</v-chip>
+                </v-chip-group>
             </v-card>
         </v-main>
     </v-app>
 </template>
 
 <style scoped>
+.post-body{
+    max-height: 100px;
+    overflow: hidden;
+}
 .content-body {
     margin: 10px;
 }
