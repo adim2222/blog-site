@@ -1,23 +1,21 @@
 <script setup>
 import { useRoute } from 'vue-router';
 import store from "../scripts/store/store.js"
-import {computed} from 'vue'
+
+store.dispatch('getPosts');
+store.dispatch('getComments');
 
 const route = useRoute();
 
-console.log(route.params);
-
-let id = parseInt(route.params.id)
+let id = parseInt(route.params.id);
 
 import { useRouter } from 'vue-router'
 
 const router = useRouter();
 
-let comments = store.state.comments.data.comments.filter((comment) => {
+let comments = store.state.comments.filter((comment) => {
     return comment.postId === id;
 });
-
-console.log(comments)
 </script>
 
 <template>
@@ -35,11 +33,11 @@ console.log(comments)
     </div>
     <div class="comment-section ml-3 mt-3">
         <span class="comment-section-label ml-3">Comments:</span>
-        <div class="comment mb-4 pa-2" v-for="comment in comments">
+        <v-card class="comment mb-4 pa-2" v-for="comment in comments">
             <v-avatar color="surface-variant">{{ comment.user.id }}</v-avatar>
             <span class="ml-2 username">{{ comment.user.username }}:</span>
             <span class="ml-6">{{ comment.body }}</span>
-        </div>
+        </v-card>
     </div>
 </template>
 

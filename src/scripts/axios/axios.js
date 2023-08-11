@@ -1,17 +1,7 @@
 import axios from 'axios';
-import store from '../store/store.js';
 
-async function getPosts() {
-    const promise = axios.get('https://dummyjson.com/posts?limit=150').then(function (response) {
-        store.dispatch('getPosts', response.data.posts);
-    })
-    getComments();
-}
+const getPosts = () => axios.get('https://dummyjson.com/posts?limit=150').then((response) => response.data)
 
-async function getComments() {
-    const promise = axios.get('https://dummyjson.com/comments?limit=340').then(function (response) {
-        store.dispatch('getComments', response);
-    })
-}
+const getComments = () => axios.get('https://dummyjson.com/comments?limit=340').then((response) => response.data)
 
-export default getPosts;
+export {getComments, getPosts}

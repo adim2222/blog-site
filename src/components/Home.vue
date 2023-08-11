@@ -3,8 +3,10 @@ import store from '../scripts/store/store.js'
 import { useRouter } from 'vue-router'
 import 'vuetify/styles'
 
-const router = useRouter();
+store.dispatch('getPosts');
+store.dispatch('getComments');
 
+const router = useRouter();
 </script>
 
 <template>

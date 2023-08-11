@@ -1,10 +1,11 @@
 import { createStore } from "vuex";
+import { getComments, getPosts } from "../axios/axios.js";
 
 const store = createStore({
     state () {
         return {
-            posts: "",
-            comments: "",
+            posts: [],
+            comments: [],
         }
     },
     mutations: {
@@ -16,11 +17,13 @@ const store = createStore({
         }
     },
     actions: {
-        getPosts (state, value) {
-            state.commit('setPosts', value)
+        async getPosts (state) {
+            let payload = await getPosts();
+            state.commit('setPosts', payload.posts);
         },
-        getComments (state,value) {
-            state.commit('setComments', value)
+        async getComments (state) {
+            let payload = await getComments();
+            state.commit('setComments', payload.comments);
         }
     },
 })
