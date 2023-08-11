@@ -14,6 +14,10 @@ const store = createStore({
         },
         setComments (state, value) {
             state.comments = value;
+        },
+        error (state) {
+            state.posts = "loading content error"
+            state.comments = "loading content error"
         }
     },
     actions: {
